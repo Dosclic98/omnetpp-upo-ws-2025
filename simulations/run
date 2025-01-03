@@ -1,0 +1,4 @@
+#!/bin/sh
+cd `dirname $0`
+../src/omnetpp_upo_ws_2025 -n .:../src $*
+# for shared lib, use: opp_run -l ../src/omnetpp_upo_ws_2025 -n .:../src $*
