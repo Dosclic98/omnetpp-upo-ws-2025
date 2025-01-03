@@ -173,3 +173,4 @@ backups
 *.qtenvrc
 *.sca
 *.exe
+/src/omnetpp-upo-ws-2025
