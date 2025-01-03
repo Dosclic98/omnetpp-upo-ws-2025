@@ -20,6 +20,7 @@ import omnetpp_upo_ws_2025.router.Router;
 network Network {
 	parameters:
 	    int numTics = default(20);
+	    @statistic[delayStat](source=delaySignal; record=max,avg,vector);
 	
 	submodules:
 	    tics[numTics]: Tic {
