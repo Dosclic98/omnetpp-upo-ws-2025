@@ -18,21 +18,5 @@ import omnetpp_upo_ws_2025.tic.Tic;
 import omnetpp_upo_ws_2025.router.Router;
 
 network Network {
-	parameters:
-	    int numTics = default(20);
-	    @statistic[delayStat](source=delaySignal; record=max,avg,vector);
-	
-	submodules:
-	    tics[numTics]: Tic {
-	    	numTics = parent.numTics;
-	    };
-	    router: Router {
-	    	gateSize = parent.numTics;
-	    };	    
-	
-	connections:
-	    for i=0..numTics-1 {
-	    	tics[i].peerGate[1] <--> {delay = 10ms;} <--> tics[(i+1)%numTics].peerGate[0];
-	    	tics[i].routGate <--> {delay = 20ms;} <--> router.routGate[i];
-	    }
+
 }

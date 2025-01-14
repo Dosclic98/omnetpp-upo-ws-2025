@@ -19,11 +19,7 @@
 Define_Module(Tic);
 
 void Tic::initialize() {
-    sendInterval = par("sendInterval").intValue();
-    numTics = par("numTics").intValue();
-    isOptimized = par("isOptimized").boolValue();
-
-    scheduleAfter(SimTime(sendInterval,SIMTIME_MS), &sendTimer);
+    // TODO To Complete
 }
 
 TicMessage* Tic::createNewMessage() {
@@ -55,23 +51,7 @@ void Tic::sendMessage(TicMessage* message, bool isOptimized) {
 }
 
 void Tic::handleMessage(cMessage *msg) {
-    if(msg == &sendTimer) {
-        // Create and send message
-        TicMessage* message = createNewMessage();
-        sendMessage(message, isOptimized);
-        // Reschedule timer
-        rescheduleAfter(SimTime(sendInterval,SIMTIME_MS), &sendTimer);
-    } else {
-        TicMessage* recvdMessage = check_and_cast<TicMessage*>(msg);
-        if(recvdMessage->getDest() == this->getIndex()) {
-            // Message arrived at destination
-            emit(delaySignal, simTime() - recvdMessage->getCreationTime());
-
-            delete msg;
-        } else {
-            sendMessage(recvdMessage, isOptimized);
-        }
-    }
+    // TODO To Complete
 }
 
 void Tic::finish() {

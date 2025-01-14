@@ -16,17 +16,5 @@
 package omnetpp_upo_ws_2025.tic;
 
 simple Tic {
-    parameters:
-        int sendInterval @unit(ms) = default(500ms);
-        int numTics = default(2);
-        volatile int dest = default(intuniform(0, numTics-1));
-        bool isOptimized = default(false);
-
-		@signal[delaySignal](type=simsignal_t);
-		@statistic[delayStat](source=delaySignal; record=max,avg,vector);
-        @display("i=block/routing,,0");
-    gates:
-        inout peerGate[2];
-        inout routGate;
 
 }

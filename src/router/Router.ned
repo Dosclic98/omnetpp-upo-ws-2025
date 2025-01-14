@@ -17,11 +17,5 @@ package omnetpp_upo_ws_2025.router;
 
 simple Router
 {
-    parameters:
-        int gateSize = default(2);
 
-
-        @display("i=abstract/router,,0");
-    gates:
-        inout routGate[gateSize];
 }
