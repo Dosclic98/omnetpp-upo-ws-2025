@@ -16,5 +16,10 @@
 package omnetpp_upo_ws_2025.tic;
 
 simple Tic {
-
+	
+	parameters:
+        
+        @signal[delaySignal](type=simtime_t);
+		@statistic[delayStat](source=delaySignal; record=max,avg,vector);
+        @display("i=block/routing");
 }
