@@ -22,9 +22,9 @@ simple Tic {
         volatile int dest = default(intuniform(0, numTics-1));
         bool isOptimized = default(false);
 
-		@signal[delaySignal](type=simsignal_t);
+		@signal[delaySignal](type=simtime_t);
 		@statistic[delayStat](source=delaySignal; record=max,avg,vector);
-        @display("i=block/routing,,0");
+        @display("i=block/routing");
     gates:
         inout peerGate[2];
         inout routGate;

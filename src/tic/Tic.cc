@@ -23,6 +23,8 @@ void Tic::initialize() {
     numTics = par("numTics").intValue();
     isOptimized = par("isOptimized").boolValue();
 
+    delaySignal = registerSignal("delaySignal");
+
     scheduleAfter(SimTime(sendInterval,SIMTIME_MS), &sendTimer);
 }
 

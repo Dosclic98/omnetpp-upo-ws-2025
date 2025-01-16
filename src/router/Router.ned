@@ -21,7 +21,7 @@ simple Router
         int gateSize = default(2);
 
 
-        @display("i=abstract/router,,0");
+        @display("i=abstract/router");
     gates:
         inout routGate[gateSize];
 }
