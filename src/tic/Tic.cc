@@ -29,7 +29,6 @@ void Tic::initialize() {
 }
 
 TicMessage* Tic::createNewMessage() {
-    delaySignal = registerSignal("delaySignal");
     TicMessage* message = new TicMessage();
     int dest = par("dest").intValue();
     while(dest == this->getIndex()) {
