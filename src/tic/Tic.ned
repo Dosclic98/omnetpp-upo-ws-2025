@@ -23,7 +23,7 @@ simple Tic {
         bool isOptimized = default(false);
 
 		@signal[delaySignal](type=simtime_t);
-		@statistic[delayStat](source=delaySignal; record=max,avg,vector);
+		@statistic[delayStat](source=delaySignal; record=max,avg,vector,histogram);
         @display("i=block/routing");
     gates:
         inout peerGate[2];
