@@ -20,6 +20,6 @@ simple Tic {
 	parameters:
         
         @signal[delaySignal](type=simtime_t);
-		@statistic[delayStat](source=delaySignal; record=max,avg,vector);
+		@statistic[delayStat](source=delaySignal; record=max,avg,vector,histogram);
         @display("i=block/routing");
 }
