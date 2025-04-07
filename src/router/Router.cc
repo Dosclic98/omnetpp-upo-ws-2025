@@ -23,6 +23,5 @@ void Router::initialize() {
 }
 
 void Router::handleMessage(cMessage *msg) {
-    TicMessage* rcvdMessage = check_and_cast<TicMessage*>(msg);
-    send(rcvdMessage, "routGate$o", rcvdMessage->getDest());
+    // TODO To Complete
 }
